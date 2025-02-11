@@ -1,6 +1,9 @@
 import type { Config } from "tailwindcss";
 
-const config: Pick<Config, "content" | "presets"> = {
+import { shadcnPreset } from "./src/lib/shadcn-preset";
+
+const config: Omit<Config, "content" | "presets"> = {
+  presets: [shadcnPreset],
   content: [
     "./src/**/*.{js,ts,jsx,tsx}",
     "../../apps/**/*.{js,ts,jsx,tsx}",
